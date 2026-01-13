@@ -1,0 +1,20 @@
+<script lang="ts">
+	import './layout.css';
+	import favicon from '$lib/assets/favicon.svg';
+
+	let { children } = $props();
+</script>
+
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<header class="sticky top-0 z-10 flex h-12.5 w-full items-center justify-between bg-white px-20">
+	<h1 class="text-lg font-bold">ALLIANCE POWER</h1>
+	<nav>
+		<ul class="flex h-full items-center justify-around space-x-4 font-bold">
+			<li>ABOUT</li>
+			<li>CAREERS</li>
+			<li>PROJECTS</li>
+			<li>CONTACT US</li>
+		</ul>
+	</nav>
+</header>
+{@render children()}
