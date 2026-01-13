@@ -71,18 +71,21 @@
 						<!-- Example icon: solar panel -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-8 w-8 text-yellow-500"
-							fill="none"
+							width="24"
+							height="24"
 							viewBox="0 0 24 24"
-							stroke="currentColor"
+							fill="none"
+							stroke="oklch(79.5% 0.184 86.047)"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-sun-icon lucide-sun"
+							><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path
+								d="m4.93 4.93 1.41 1.41"
+							/><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path
+								d="m6.34 17.66-1.41 1.41"
+							/><path d="m19.07 4.93-1.41 1.41" /></svg
 						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 3v18m9-9H3"
-							/>
-						</svg>
 					</div>
 					<h3 class="mb-2 text-xl font-semibold">Complete Solar Solutions</h3>
 					<p class="text-gray-600">
@@ -98,18 +101,19 @@
 						<!-- Example icon: leaf -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-8 w-8 text-green-500"
-							fill="none"
+							width="24"
+							height="24"
 							viewBox="0 0 24 24"
+							fill="none"
 							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-leaf-icon lucide-leaf text-green-500"
+							><path
+								d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+							/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" /></svg
 						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 3C7 7 5 13 5 19h14c0-6-2-12-7-16z"
-							/>
-						</svg>
 					</div>
 					<h3 class="mb-2 text-xl font-semibold">Lower Costs, Greener Future</h3>
 					<p class="text-gray-600">
@@ -126,18 +130,19 @@
 						<!-- Example icon: support -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-8 w-8 text-blue-500"
-							fill="none"
+							width="24"
+							height="24"
 							viewBox="0 0 24 24"
+							fill="none"
 							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-headset-icon lucide-headset text-blue-500"
+							><path
+								d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"
+							/><path d="M21 16v2a4 4 0 0 1-4 4h-5" /></svg
 						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M18 8a6 6 0 01-12 0M12 12v9"
-							/>
-						</svg>
 					</div>
 					<h3 class="mb-2 text-xl font-semibold">Seamless Customer Experience</h3>
 					<p class="text-gray-600">
@@ -149,7 +154,7 @@
 			<!-- CTA -->
 			<div class="mt-12">
 				<a
-					href="#contact"
+					href="/"
 					class="inline-block rounded-4xl bg-[#03a9f4] px-8 py-3 font-semibold text-white shadow-md transition hover:bg-[#03a9f4]/80"
 				>
 					Get Started
