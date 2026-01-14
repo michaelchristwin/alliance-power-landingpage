@@ -1,10 +1,18 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import hero_img from '$lib/assets/solar-hero.webp';
-	import zamfara from '$lib/assets/partners/Zamfara-Government.webp';
-	import taj from '$lib/assets/partners/Taj-Bank.webp';
-	import crown_club from '$lib/assets/partners/Crown-Ranch-logo.webp';
-	import glisten from '$lib/assets/partners/Glisten-logo-full.webp';
-	import jaiz from '$lib/assets/partners/Jaiz-Bank-logo.webp';
+	import { zamfara, taj, crown_club, glisten, jaiz } from '$lib/assets/partners';
+	import {
+		crown_club_project,
+		mowa_zamfara,
+		mowa_zamfara2,
+		glistens_project,
+		great_height,
+		taj_bank_kano,
+		taj_bank_sokoto,
+		lakeview_estate,
+		edible_creations
+	} from '$lib/assets/projects';
 </script>
 
 <svelte:head>
@@ -19,25 +27,36 @@
 		content="Projects Completed In Last 3 Years 1 Happy ClientsWho Trust Us 10 With a strong focus on research and development, Alliance Power Generation Company has developed cutting-edge solar technologies and solutions that maximize energy production and optimize energy efficiency. Our team..."
 	/>
 </svelte:head>
-<main class="inter h-screen w-screen overflow-x-hidden overflow-y-auto scroll-smooth p-20">
-	<div class="flex h-[70vh] w-full items-center justify-between bg-cover bg-center">
-		<div class="h-fit w-150 items-center">
-			<h1 class="text-[50px] leading-relaxed font-bold text-black">
+<main class="inter h-screen w-screen overflow-y-auto scroll-smooth">
+	<section
+		class="grid h-auto min-h-[80vh] w-full grid-cols-1 items-center justify-items-stretch bg-cover bg-center p-20 md:grid-cols-2"
+	>
+		<img
+			src={hero_img}
+			alt="Hero"
+			class="order-first h-75 w-75 justify-self-center rounded-full object-cover object-center md:order-last md:h-100 md:w-100 md:justify-self-end lg:h-125 lg:w-125"
+		/>
+
+		<div class="h-fit w-full space-y-6 justify-self-start">
+			<h1
+				class="text-3xl leading-tight font-bold text-black md:text-4xl lg:text-5xl lg:leading-relaxed"
+			>
 				Power Your Business with Clean, Reliable Energy
 			</h1>
-			<p class="text-xl leading-normal text-neutral-500">
+			<p class="text-lg leading-relaxed text-neutral-500 md:text-xl">
 				Scalable renewable generation solutions that cut costs, reduce risk, and future-proof your
 				operations.
 			</p>
 			<button
 				type="button"
-				class="mt-5 h-14 w-50 rounded-4xl border bg-[#03a9f4] text-white hover:bg-[#03a9f4]/80"
-				>Get Quote</button
+				class="mt-2 h-16 w-full rounded-4xl border bg-[#03a9f4] text-white transition-colors hover:bg-[#03a9f4]/80 md:w-50"
 			>
+				Get Quote
+			</button>
 		</div>
-		<img src={hero_img} alt="Hero" class="h-125 w-125 rounded-full object-cover object-center" />
-	</div>
-	<div class="mt-40 h-140 w-full">
+	</section>
+
+	<section class="mt-30 h-130 w-full p-20">
 		<h2 class="text-center text-3xl font-semibold">Our Partners</h2>
 		<div class="mt-10 grid grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-5">
 			<img src={taj} alt="Taj Bank" class="h-50 w-50 rounded-full object-contain object-center" />
@@ -54,8 +73,8 @@
 				class="h-50 w-50 rounded-full object-contain object-center"
 			/>
 		</div>
-	</div>
-	<section class="bg-gray-50 py-16">
+	</section>
+	<section class="bg-gray-50 p-20">
 		<div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
 			<h2 class="mb-4 text-3xl font-extrabold text-gray-900">Power. Efficiency. Sustainability.</h2>
 			<p class="mb-12 text-gray-600">
@@ -68,7 +87,6 @@
 					class="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition hover:shadow-xl"
 				>
 					<div class="mb-4 rounded-full bg-yellow-100 p-4">
-						<!-- Example icon: solar panel -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"
@@ -98,7 +116,6 @@
 					class="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition hover:shadow-xl"
 				>
 					<div class="mb-4 rounded-full bg-green-100 p-4">
-						<!-- Example icon: leaf -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"
@@ -127,7 +144,6 @@
 					class="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition hover:shadow-xl"
 				>
 					<div class="mb-4 rounded-full bg-blue-100 p-4">
-						<!-- Example icon: support -->
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"
@@ -154,13 +170,78 @@
 			<!-- CTA -->
 			<div class="mt-12">
 				<a
-					href="/"
+					href={resolve('/')}
 					class="inline-block rounded-4xl bg-[#03a9f4] px-8 py-3 font-semibold text-white shadow-md transition hover:bg-[#03a9f4]/80"
 				>
 					Get Started
 				</a>
 			</div>
 		</div>
+	</section>
+	<section class="mt-40 h-150 w-full space-y-4">
+		<h2 class=" text-center text-3xl font-semibold">Our Projects</h2>
+		<div
+			class="flex h-120 w-full snap-x snap-mandatory flex-nowrap items-center gap-3 overflow-x-auto"
+		>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${taj_bank_kano})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${taj_bank_sokoto})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${lakeview_estate})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${edible_creations})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${crown_club_project})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${mowa_zamfara})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${mowa_zamfara2})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${glistens_project})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+			<div
+				class="flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center-safe bg-cover bg-center p-3 shadow-lg"
+				style={`background-image: url(${great_height})`}
+			>
+				<div class="h-40 w-[95%] rounded-xl bg-white"></div>
+			</div>
+		</div>
+		<button
+			class="mx-auto flex h-12.5 w-40 items-center justify-center rounded-4xl bg-[#03a9f4] text-white transition-colors hover:bg-[#03a9f4]/80"
+			type="button">More Projects</button
+		>
 	</section>
 </main>
 
