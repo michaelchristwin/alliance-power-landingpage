@@ -7,9 +7,9 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <header class="sticky top-0 z-10 flex h-12.5 w-full items-center justify-between bg-white px-20">
-	<h1 class="text-lg font-bold">ALLIANCE POWER</h1>
+	<h1 class="text-[16px] font-bold md:text-lg">ALLIANCE POWER</h1>
 	<nav>
-		<ul class="flex h-full items-center justify-around space-x-4 font-bold">
+		<ul class="flex h-full items-center justify-around space-x-4 text-sm font-bold md:text-[16px]">
 			<li>ABOUT</li>
 			<li>CAREERS</li>
 			<li>PROJECTS</li>
