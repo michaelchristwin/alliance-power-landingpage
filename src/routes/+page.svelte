@@ -59,6 +59,53 @@
 - Panel damage or degradation`
 		}
 	];
+	const projects = [
+		{
+			image: taj_bank_kano,
+			title: 'Taj Bank Kano',
+			description: '30KVA Solar installation'
+		},
+		{
+			image: taj_bank_sokoto,
+			title: 'Taj Bank Sokoto',
+			description: 'Solar installation'
+		},
+		{
+			image: lakeview_estate,
+			title: 'Lakeview Estate',
+			description: '10KVA Solar installation'
+		},
+		{
+			image: edible_creations,
+			title: 'Edible Creations',
+			description: 'Commercial Installation'
+		},
+		{
+			image: crown_club_project,
+			title: 'Crown Club',
+			description: 'Solar installation'
+		},
+		{
+			image: mowa_zamfara,
+			title: 'Ministry of Women Affairs Zamfara Block A',
+			description: '108KVA Solar Inverters installation'
+		},
+		{
+			image: mowa_zamfara2,
+			title: 'Ministry of Women Affairs Zamfara Block B',
+			description: '54KVA Solar Inverters installation'
+		},
+		{
+			image: glistens_project,
+			title: 'Glistens International Academy Abuja',
+			description: '108KVA Solar Inverters installation'
+		},
+		{
+			image: great_height,
+			title: 'Great Heights Academy Abuja',
+			description: '165KVA Solar Inverters installation'
+		}
+	];
 
 	let openIndex: number | null = null;
 
@@ -86,6 +133,13 @@
 			initials: 'CO'
 		}
 	];
+	const partners = [
+		{ src: taj, alt: 'Taj Bank' },
+		{ src: jaiz, alt: 'Jaiz Bank' },
+		{ src: zamfara, alt: 'Zamfara state government Nigeria' },
+		{ src: crown_club, alt: 'Crown club and resorts' },
+		{ src: glisten, alt: 'Glisten international academy' }
+	];
 </script>
 
 <svelte:head>
@@ -102,21 +156,21 @@
 </svelte:head>
 <main class="inter h-screen w-screen overflow-y-auto scroll-smooth">
 	<section
-		class="grid h-auto min-h-[85vh] w-full grid-cols-1 items-center justify-items-stretch bg-cover bg-center p-20 md:grid-cols-2"
+		class="grid h-auto min-h-[85vh] w-full grid-cols-1 items-center justify-items-stretch bg-cover bg-center p-10 md:grid-cols-2 md:p-20"
 	>
 		<img
 			src={hero_img}
 			alt="Hero"
-			class="order-first h-75 w-75 justify-self-center rounded-full object-cover object-center md:order-last md:h-100 md:w-100 md:justify-self-end lg:h-125 lg:w-125"
+			class="order-first h-70 w-70 justify-self-center rounded-full object-cover object-center md:order-last md:h-100 md:w-100 md:justify-self-end lg:h-125 lg:w-125"
 		/>
 
 		<div class="h-fit w-full space-y-6 justify-self-start">
 			<h1
-				class="text-3xl leading-tight font-bold text-black md:text-4xl lg:text-5xl lg:leading-relaxed"
+				class="text-2xl leading-tight font-bold text-black md:text-4xl lg:text-5xl lg:leading-relaxed"
 			>
 				Power Your Business with Clean, Reliable Energy
 			</h1>
-			<p class="text-lg leading-relaxed text-neutral-500 md:text-xl">
+			<p class="text-base leading-relaxed text-neutral-500 md:text-xl">
 				Scalable renewable generation solutions that cut costs, reduce risk, and future-proof your
 				operations.
 			</p>
@@ -129,25 +183,19 @@
 		</div>
 	</section>
 
-	<section class="mt-30 h-auto min-h-130 w-full p-20">
+	<section class="mt-30 h-auto min-h-130 w-full p-10 md:p-20">
 		<h2 class="text-center text-3xl font-semibold tracking-tight">Our Partners</h2>
-		<div class="mt-10 grid grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-5">
-			<img src={taj} alt="Taj Bank" class="h-50 w-50 rounded-full object-contain object-center" />
-			<img src={jaiz} alt="Jaiz Bank" class="h-50 w-50 rounded-full object-contain object-center" />
-			<img
-				src={zamfara}
-				alt="Zamfara state government Nigeria"
-				class="h-50 w-50 rounded-full object-contain object-center"
-			/>
-			<img src={crown_club} alt="Crown club and resorts" class="h-50 w-50 rounded-full" />
-			<img
-				src={glisten}
-				alt="Glisten international academy"
-				class="h-50 w-50 rounded-full object-contain object-center"
-			/>
+		<div class="mt-10 grid grid-cols-2 place-items-center gap-3 md:grid-cols-3 lg:grid-cols-5">
+			{#each partners as partner}
+				<img
+					src={partner.src}
+					alt={partner.alt}
+					class="h-30 w-30 rounded-full object-contain object-center md:h-50 md:w-50"
+				/>
+			{/each}
 		</div>
 	</section>
-	<section class="bg-gray-50 p-20">
+	<section class="bg-gray-50 p-10 md:p-20">
 		<div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
 			<h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
 				Power. Efficiency. Sustainability.
@@ -257,193 +305,35 @@
 	<section class="mt-40 h-150 w-full space-y-4">
 		<h2 class="text-center text-3xl font-semibold tracking-tight">Our Projects</h2>
 		<div
-			class="flex h-120 w-full snap-x snap-mandatory flex-nowrap items-center gap-3 overflow-x-auto"
+			class="flex h-75 w-full snap-x snap-mandatory flex-nowrap items-center gap-3 overflow-x-auto md:h-120"
 		>
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${taj_bank_kano})`}
-			>
+			{#each projects as project}
 				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
+					class="group relative flex h-70 w-75 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02] md:h-110 md:w-120"
+					style={`background-image: url(${project.image})`}
 				>
-					<h3 class="text-center text-xl font-semibold text-white">Taj Bank Kano</h3>
-					<p class="text-center text-base text-white/90">30KVA Solar installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
+					<div
+						class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
+					></div>
 
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${taj_bank_sokoto})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">Taj Bank Sokoto</h3>
-					<p class="text-center text-base text-white/90">Solar installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
+					<div
+						class="relative z-10 flex h-fit w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
+					>
+						<h3 class="text-center text-lg font-semibold text-white md:text-xl">
+							{project.title}
+						</h3>
+						<p class="text-center text-base text-white/90">
+							{project.description}
+						</p>
+					</div>
 
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${lakeview_estate})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">Lakeview Estate</h3>
-					<p class="text-center text-base text-white/90">10KVA Solar installation</p>
+					<button
+						class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
+					>
+						View Details
+					</button>
 				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
-
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${edible_creations})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">Edible Creations</h3>
-					<p class="text-center text-base text-white/90">Commercial Installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
-
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${crown_club_project})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">Crown Club</h3>
-					<p class="text-center text-base text-white/90">Solar installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
-
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${mowa_zamfara})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">
-						Ministry of Women Affairs Zamfara Block A
-					</h3>
-					<p class="text-center text-base text-white/90">108KVA Solar Inverters installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
-
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${mowa_zamfara2})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">
-						Ministry of Women Affairs Zamfara Block B
-					</h3>
-					<p class="text-center text-base text-white/90">54KVA Solar Inverters installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
-
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${glistens_project})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">
-						Glistens International Academy Abuja
-					</h3>
-					<p class="text-center text-base text-white/90">108KVA Solar Inverters installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
-
-			<div
-				class="group relative flex h-110 w-120 shrink-0 snap-center flex-col-reverse items-center overflow-hidden rounded-lg bg-cover bg-center p-3 shadow-lg transition-transform hover:scale-[1.02]"
-				style={`background-image: url(${great_height})`}
-			>
-				<div
-					class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
-				></div>
-				<div
-					class="relative z-10 flex h-20 w-[95%] flex-col justify-center rounded-xl bg-white/10 bg-clip-padding px-4 backdrop-blur-sm"
-				>
-					<h3 class="text-center text-xl font-semibold text-white">Great Heights Academy Abuja</h3>
-					<p class="text-center text-base text-white/90">165KVA Solar Inverters installation</p>
-				</div>
-				<button
-					class="absolute bottom-28 rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100"
-				>
-					View Details
-				</button>
-			</div>
+			{/each}
 		</div>
 		<button
 			class="mx-auto flex h-12.5 w-40 items-center justify-center rounded-4xl bg-[#3f3e73] text-white transition-colors hover:bg-[#03a9f4]/80"
@@ -526,10 +416,10 @@
 						</span>
 
 						<span
-							class="flex h-8 w-8 items-center justify-center rounded-full bg-[#3f3e73]/10 text-[#3f3e73] transition-all duration-300 group-hover:bg-[#03a9a4] group-hover:text-white"
-							class:rotate-45={openIndex === i}
+							class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#3f3e73]/10 text-[#3f3e73] transition-all duration-300 group-hover:bg-[#03a9a4] group-hover:text-white"
+							class:rotate-180={openIndex === i}
 						>
-							+
+							{openIndex === i ? '−' : '+'}
 						</span>
 					</button>
 
